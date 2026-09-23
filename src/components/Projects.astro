@@ -20,7 +20,7 @@
         </div>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 gap-8">
         <div class="space-y-6">
           <div>
             <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Ruolo & Obiettivo</h4>
@@ -31,31 +31,13 @@
           <div>
             <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Sfida Tecnica</h4>
             <p class="text-sm text-zinc-400 leading-relaxed">
-              Disaccoppiare la logica di business dall'interfaccia utente (tramite pattern MVC) e garantire la persistenza dei dati garantendo la consistenza transazionale durante le operazioni di carico/scarico.
+              Disaccoppiare la logica di business dall'interfaccia utente (tramite pattern MVC) e garantire la consistenza dei dati durante le operazioni di carico/scarico.
             </p>
           </div>
           <div>
             <a href="https://github.com/algomass/OrtoGest_" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-zinc-300 hover:text-emerald-500 transition-colors duration-150">
               > _VIEW_REPOSITORY
             </a>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Dettaglio Architetturale</h4>
-          <div class="p-4 bg-[#111113] border border-zinc-800 font-mono text-xs text-zinc-300 overflow-x-auto whitespace-pre">
-<span class="text-zinc-500">// Struttura Logica Pattern MVC</span>
-[Controller]
-  ├─ RegistraLottoAppController
-  └─ GestioneScorteController
-
-[Model (Entity)]
-  ├─ Lotto (ID, Quantità, Scadenza)
-  └─ Prodotto (Nome, Categoria)
-
-[Boundary]
-  ├─ View_Magazziniere
-  └─ InterfacciaEmailAdapter
           </div>
         </div>
       </div>
@@ -72,7 +54,7 @@
         </div>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 gap-8">
         <div class="space-y-6">
           <div>
             <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Ruolo & Obiettivo</h4>
@@ -83,23 +65,8 @@
           <div>
             <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Sfida Tecnica</h4>
             <p class="text-sm text-zinc-400 leading-relaxed">
-              Gestire l'integrità referenziale complessa e implementare automatismi a livello DB (tramite Viste e Trigger) per il ricalcolo automatico delle giacenze in tempo reale.
+              Gestire l'integrità referenziale complessa e implementare automatismi a livello DB per il ricalcolo automatico delle giacenze in tempo reale.
             </p>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Dettaglio Dati</h4>
-          <div class="p-4 bg-[#111113] border border-zinc-800 font-mono text-xs text-zinc-300 overflow-x-auto whitespace-pre">
-<span class="text-zinc-500">-- Schema Logico (Sintesi)</span>
-FORNITORE (<span class="text-emerald-400">P_IVA</span>, Nome, Indirizzo)
-LOTTO (<span class="text-emerald-400">CodiceLotto</span>, <span class="text-blue-400">Fornitore_ID*</span>, DataIngresso)
-PRODOTTO (<span class="text-emerald-400">CodiceArticolo</span>, Descrizione, Prezzo)
-COMPOSIZIONE (<span class="text-blue-400">Lotto_ID*</span>, <span class="text-blue-400">Prodotto_ID*</span>, Qta)
-
-<span class="text-zinc-500">-- Vincoli applicati</span>
-CHECK (Qta > 0)
-FOREIGN KEY ON DELETE RESTRICT
           </div>
         </div>
       </div>
@@ -116,7 +83,7 @@ FOREIGN KEY ON DELETE RESTRICT
         </div>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 gap-8">
         <div class="space-y-6">
           <div>
             <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Ruolo & Obiettivo</h4>
@@ -129,20 +96,6 @@ FOREIGN KEY ON DELETE RESTRICT
             <p class="text-sm text-zinc-400 leading-relaxed">
               Gestire in maniera deterministica il ciclo di vita dell'activity Android, salvaguardando lo stato del gioco (turni, dadi tenuti, score parziale) in caso di rotazione dello schermo o interruzione dell'app.
             </p>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">Feature Specification</h4>
-          <div class="p-4 bg-[#111113] border border-zinc-800 font-mono text-xs text-zinc-300 overflow-x-auto whitespace-pre">
-[STATE_MACHINE]
-├─ Turn Initialization
-├─ Roll Mechanics (Max 3/turn)
-│   └─ Keep/Release Die State
-├─ Scoring Engine
-│   ├─ Upper Section (Sum of faces)
-│   └─ Lower Section (Combinatorics)
-└─ Turn Finalization -> State Commit
           </div>
         </div>
       </div>
