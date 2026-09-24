@@ -38,7 +38,7 @@ const { title, description = "Portfolio di Matteo Algozzino, Software & Data Eng
         </nav>
 
         <div class="flex items-center gap-4">
-          <a href="/cv-matteo-algozzino.pdf" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center justify-center rounded-sm border border-zinc-700 text-sm font-medium bg-transparent text-zinc-200 hover:bg-zinc-800 hover:border-zinc-600 h-9 px-4 py-2 transition-colors duration-150 font-mono">
+          <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/cv-matteo-algozzino.pdf`} target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center justify-center rounded-sm border border-zinc-700 text-sm font-medium bg-transparent text-zinc-200 hover:bg-zinc-800 hover:border-zinc-600 h-9 px-4 py-2 transition-colors duration-150 font-mono">
             [DOWNLOAD CV]
           </a>
         </div>
